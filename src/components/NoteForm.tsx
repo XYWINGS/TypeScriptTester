@@ -25,6 +25,11 @@ export function NoteForm({onSubmit} : NoteFormProps ){
         })
     }
 
+
+    function addTag(tag:Tag){
+        setSelectedTags(prev => [...prev,tag])
+    }
+
     return(
        <Form onSubmit={handleSubmit}>
         <Stack gap={4}>
@@ -42,6 +47,7 @@ export function NoteForm({onSubmit} : NoteFormProps ){
                             onCreateOption={ label =>{
                              const newTag = {id:uuidV4(),label}
                              onAddTag(newTag)
+                             setSelectedTags(prev => [...prev, newTag])
                             }}
                             isMulti 
                             value={selectedTags.map(tag => {

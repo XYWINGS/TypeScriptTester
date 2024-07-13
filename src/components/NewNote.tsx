@@ -8,14 +8,14 @@ type NewNoteProps ={
 
 }
 
-export function NewNote({onSubmit, onAddTag, avaliableTags} : NewNoteProp){
+export function NewNote({onSubmit, onAddTag, avaliableTags} : NewNoteProps){
     return (
         <div>
             <h1 className="mb-4">Add a new note</h1>
             <NoteForm 
-            onSubmit={onSubmit}
-            onAddTag={onAddTag}
-            avaliableTags={avaliableTags}/>
+                onSubmit={onSubmit}
+                onAddTag={onAddTag}
+                avaliableTags={avaliableTags}/>
         </div>
     )
 } 
